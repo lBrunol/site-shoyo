@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home - Shoyo Shoyo Comida Oriental</title>
+    <link rel="stylesheet" href="css/estiloGeral.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.css" />
+    <script src="js/biblioteca/jquery-2.1.3.min.js"></script>
+    <script src="js/biblioteca/owl.carousel.min.js"></script>
+    <script>
+    $(document).ready(function () {
+
+        $("#owl-demo").owlCarousel({
+
+            navigation: false, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            itemsDesktop: true,
+            itemsDesktopSmall: true,
+            itemsTablet: true,
+            itemsMobile: true
+        });
+
+    });
+    </script>
+    <style>
+        #owl-demo .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="logotipos">
+                <div id="logotipoShoyo">
+                    <img src="imagens/shoyo-shoyo-logo.png" />
+                    <h1 style="display:none;">
+                        Shoyo Shoyo Comida Oriental
+                    </h1>
+                </div>
+                <div id="midiasSociais">
+                    <img src="imagens/vem-logo-shoyo-shoyo.png" id="vemPraShoyo"/>
+                    <div id="redesSociais">
+                        <img src="imagens/facebook-compartilhe.png" />
+                        <img src="imagens/facebook.png" />
+                        <img src="imagens/twitter.png" />
+                        <img src="imagens/google-plus.png" />
+                    </div>
+                </div>
+            </div>
+            <nav id="menuPrincipal">
+                <ul>
+                    <li><a href="javascript:void(0);">Home</a></li>
+                    <li><a href="javascript:void(0);">Empresa</a></li>
+                    <li><a href="javascript:void(0);">Cardápio</a></li>
+                    <li><a href="javascript:void(0);">Combinados</a></li>
+                    <li><a href="javascript:void(0);">Promoções</a></li>
+                    <li><a href="javascript:void(0);">Localização</a></li>
+                    <li><a href="javascript:void(0);">Fotos</a></li>
+                    <li><a href="javascript:void(0);">Vídeos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <content>
+            <article>
+                <div id="owl-demo" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="imagens/banner/imagens/banner01.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="imagens/banner/imagens/banner02.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="imagens/banner/imagens/banner03.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="imagens/banner/imagens/banner04.jpg" />
+                    </div>
+                </div>
+            </article>
+        </content>
+        <footer>
+            <div id="rodape">
+                <div id="logoRodape">
+                    <img src="imagens/shoyo-shoyo-logo.png" />
+                </div>
+                <div id="informacoesContato">
+                    <p>Shoyo Shoyo LTDA. ME</p>
+                    <p>Endereço: xxxxxxxx</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

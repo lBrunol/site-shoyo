@@ -1,0 +1,58 @@
+/*/ Reset */
+* {margin:0; padding: 0; outline: none; font-family: arial, calibri;}
+img {border:none;}
+ul{list-style:none;}
+a {text-decoration:none;}
+body {height:100%;}
+p{color:#ffffff}
+/*Geral*/
+body {width:100%; height:100%; background:url(../imagens/background-site.png) no-repeat; background-size:cover;   background-position: center center; background-attachment:fixed;}
+#wrapper {width:960px; margin:0 auto;}
+header #logotipos {margin-top:20px; float:left;}
+header #logotipos #logotipoShoyo{width:560px; float:left;}
+header #logotipos #logotipoShoyo img{float:right;}
+header #logotipos #midiasSociais {float:right; margin-left:60px; width:340px;}
+header #logotipos #midiasSociais #vemPraShoyo {margin-top:70px;}
+header #logotipos #midiasSociais #redesSociais {margin-top:8px;}
+header #logotipos #midiasSociais #redesSociais img {float:left; margin-left:5px;}
+header #logotipos #midiasSociais #redesSociais img:first-child {margin-top:3px;}
+
+/*Menu*/
+#menuPrincipal {
+    width:100%; 
+    float:left; 
+    background: #4c4c4c;
+    background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313));
+    background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+    border-radius:10px; 
+    margin-top:24px;}
+#menuPrincipal ul {width:909px; margin:0 auto; }
+#menuPrincipal ul li a{float:left; padding:9px 24px; color:#ffffff; border-right:1px solid #ffffff; font-weight:bold; font-size:15px;}
+#menuPrincipal ul li a:hover{
+    background: #c4c4c4;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M0YzRjNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEzJSIgc3RvcC1jb2xvcj0iI2JmYmZiZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMzJSIgc3RvcC1jb2xvcj0iI2FkYWRhZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc2JSIgc3RvcC1jb2xvcj0iI2M2YzZjNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkxJSIgc3RvcC1jb2xvcj0iI2QzZDNkMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkNmQ2ZDYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #c4c4c4 0%, #bfbfbf 13%, #adadad 33%, #c6c6c6 76%, #d3d3d3 91%, #d6d6d6 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c4c4c4), color-stop(13%,#bfbfbf), color-stop(33%,#adadad), color-stop(76%,#c6c6c6), color-stop(91%,#d3d3d3), color-stop(100%,#d6d6d6)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c4c4c4 0%,#bfbfbf 13%,#adadad 33%,#c6c6c6 76%,#d3d3d3 91%,#d6d6d6 100%);
+    background: -o-linear-gradient(top,  #c4c4c4 0%,#bfbfbf 13%,#adadad 33%,#c6c6c6 76%,#d3d3d3 91%,#d6d6d6 100%);
+    background: -ms-linear-gradient(top,  #c4c4c4 0%,#bfbfbf 13%,#adadad 33%,#c6c6c6 76%,#d3d3d3 91%,#d6d6d6 100%); 
+    background: linear-gradient(to bottom,  #c4c4c4 0%,#bfbfbf 13%,#adadad 33%,#c6c6c6 76%,#d3d3d3 91%,#d6d6d6 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4c4c4', endColorstr='#d6d6d6',GradientType=0 );
+    transition:all 0.5s linear;}
+
+/*Conteúdo*/
+content {margin-top:35px;}
+content #owl-demo {margin-top:35px; float:left;}
+
+/*Rodapé*/
+footer #rodape {position:relative; width:100%; float:left; margin-top:100px; height:300px;}
+footer #rodape #logoRodape {margin:auto; width:200px;}
+
+
+
+

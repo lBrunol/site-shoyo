@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home - Shoyo Shoyo Comida Oriental</title>
+
+   
+
+<style type="text/css"> 
+   
+ 
+#painel-conteudo {display:none;}
+ 
+#painel #imgslide {width:600px;height:270px;margin: 0 0 0 .6em 0;}
+ 
+ 
+</style>
+
+
+    <link rel="stylesheet" href="css/estiloGeral.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.css" />
+    <script src="js/biblioteca/jquery-2.1.3.min.js"></script>
+    <script src="js/biblioteca/owl.carousel.min.js"></script>
+    <script>
+    $(document).ready(function () {
+
+        $("#owl-demo").owlCarousel({
+
+            navigation: false, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            itemsDesktop: true,
+            itemsDesktopSmall: true,
+            itemsTablet: true,
+            itemsMobile: true
+        });
+
+    });
+    </script>
+    <style>
+        #owl-demo .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+
+<script type="text/javascript"> 
+ 
+var d=document;
+$ = function(id) {
+	if(!arguments[1]) return document.getElementById(id);
+ 
+ 
+	else document.getElementById(id).style[arguments
+ 
+ 
+[1]]=arguments[2];
+ 
+ 
+}
+ 
+ 
+ 
+function delItem(arr,item){
+for(;item<arr.length;item++) arr[item]=arr[item + 1];
+arr.length=arr.length-1;
+} function goURL(){
+(Item[atual][3].indexOf('_blank')!=-1) ? window.open(Item[atual][3].substring(0,Item[atual][3].indexOf(' '))) : location.href=Item[atual][3];
+} function startSlide(){ 
+loadImages();
+ 
+ 
+if(!paused) timeoutId=setTimeout('changeImg(1)',5000);
+} function initialize(){
+timeoutId=0;
+textareaContent=d.form_cr.select_cr.value.split(/[\r\n]/i);
+Item = new Array();
+for(x=0,y=0;x<textareaContent.length;x++){ 
+	if(textareaContent[x].length>30) Item[y++]=textareaContent[x].split('|');
+	}
+for(i=Item.length-1;i>=0;i--){
+	Item[i][0]=Item[i][0].replace(/([ \n\t\r])+/, " ");
+	Item[i][4]=(Item[i][4].length<3) ? '' : '<img src="'+Item[i][4]+'" border="0" style="margin-left:4px;" />';
+	if(Item[i][1].length<3||Item[i][3].length<3||Item[i][2].length<3||Item[i][0].length<2) delItem(Item,i);
+	}
+ 
+ 
+if(Item.length==1) d.write('<style></style>');
+atual = Math.random().toString().substring(2,6) % Item.length;
+} function startPanel(){
+usaCredito = '';
+initialize();
+if(arguments.length>0){
+ 
+ 
+	if(!isNaN(arguments[0])) atual = arguments[0];
+	}
+ 
+d.write('<div id="to-blend">'+usaCredito+'<a href="javascript:goURL()"><img src="'+Item[atual][1]+'" id="imgslide" name="img1" border="0" title="'+Item[atual][0]+'" alt="'+Item[atual][0]+'"></a>');
+d.write('<h2><a href="javascript:goURL()" id="p-link"><span id="txt1">'+Item[atual][2]+'</span><span id="icon-area">'+Item[atual][4]+'</span></a></h2></div>');
+d.write('<div id="prox-ant"><a href="javascript:void(0)" id="anterior" onclick="if(okToGo)changeImg(-1)"><img src="imagens/anterior.gif" border="0" /></a><img src="imagens/pause.gif" onclick="pauseSlide()" id="pause" '+altpause+' />');
+d.write('<a href="javascript:void(0)" id="proximo" onclick="if(okToGo)changeImg(1)"><img src="imagens/proximo.gif" border="0" /></a></div>');
+} function pauseSlide(){
+if(paused){
+	
+}else{
+	clearTimeout(timeoutId);
+	d.cookie="homeUOLpause=1;domain=.uol.com.br;expires=Thu, 2 Aug 2222 20:47:11 UTC;"; 	
+	
+} }
+ 
+var okToGo=false;
+var paused=(d.cookie.indexOf('homeUOLpause=1')!=-1) ? true : false;
+onload=startSlide;
+ 
+</script>
+
+
+
+ 
+<script type="text/javascript"> 
+ 
+// painel rotativo //
+function changeOpac(opacity){
+var obj = $('to-blend').style;
+obj.opacity=(opacity/101);
+obj.MozOpacity=(opacity/101);
+obj.KhtmlOpacity=(opacity/101);
+} function blend(imagefile){
+var speed=7;
+var timer=0;
+for(i=100;i>0;i-=2) setTimeout('changeOpac('+i+')', timer++ * speed);
+setTimeout('changeContent()', timer * speed);
+for(i=0;i<=100;i+=2) setTimeout('changeOpac('+i+')', timer++ * speed);
+} function changeImg(id){
+clearTimeout(timeoutId);
+atual+=parseInt(id);
+if(atual>Item.length-1) atual=0;
+if(atual<0) atual=Item.length-1;
+if(imgDsp[atual].complete==false){
+	atual--;
+	timeoutId = setTimeout('changeImg('+id+')',500);
+	return;
+	} 
+if(d.all && navigator.userAgent.indexOf('Opera')==-1){
+	try {
+	oDiv = $('to-blend');
+	oDiv.style.filter="blendTrans(duration=0.7)";
+   	oDiv.filters.blendTrans.apply();
+    oDiv.filters.blendTrans.play();
+	changeContent();
+	} catch(e) { changeContent(); }
+} else { blend(); }
+if(!paused) timeoutId=setTimeout('changeImg(1)',5000);
+} function loadImages(){
+imgDsp = new Array();
+for(n=0;n<Item.length;n++){
+	imgDsp[n]=new Image();
+	imgDsp[n].src=Item[n][1];
+	}
+okToGo = true;
+} function changeContent(){
+d.img1.src=imgDsp[atual].src;
+d.img1.alt=d.img1.title=Item[atual][0];
+$('txt1').innerHTML=Item[atual][2];
+if(usaCredito!='') $('credito').innerHTML=Item[atual][0];
+$('icon-area').innerHTML=Item[atual][4];
+}
+ 
+</script>
+
+
+
+</head>
+<body align="center" bgcolor="f0f8ff">
+    <div id="wrapper">
+        <header>
+            <div  id="logotipos">
+                <div id="logotipoShoyo">
+                    <img src="imagens/shoyo-shoyo-logo.png" />
+                    <h1 style="display:none;">
+                        Shoyo Shoyo Comida Oriental
+                    </h1>
+                </div>
+                <div id="midiasSociais">
+                    <img src="imagens/vem-logo-shoyo-shoyo.png" id="vemProShoyo"/>
+                    <div id="redesSociais">
+                        <img src="imagens/facebook-compartilhe.png" />
+                        <img src="imagens/facebook.png" />
+                        <img src="imagens/twitter.png" />
+                        <img src="imagens/google-plus.png" />
+                    </div>
+                </div>
+            </div>
+            <nav id="menuPrincipal">
+                <ul>
+                    <li><a href="javascript:void(0);">Home</a></li>
+                    <li><a href="javascript:void(0);">Empresa</a></li>
+                    <li><a href="javascript:void(0);">Cardápio</a></li>
+                    <li><a href="javascript:void(0);">Combinados</a></li>
+                    <li><a href="javascript:void(0);">Promoções</a></li>
+                    <li><a href="javascript:void(0);">Localização</a></li>
+                    <li><a href="javascript:void(0);">Fotos</a></li>
+                    <li><a href="javascript:void(0);">Vídeos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <content>
+            <article>
+
+     
+
+<form name="form_cr" align="center" action="" id="painel-conteudo"><textarea name="select_cr" cols="0" rows="0">
+cartao fidelidade|C:\Users\ADM\Documents\Site Shoyo Shoyo\Site Shoyo Shoyo\trunk\imagens\promocoes\cartao-fidelidade.jpg|<br>|link1.html||
+feliz combo|C:\Users\ADM\Documents\Site Shoyo Shoyo\Site Shoyo Shoyo\trunk\imagens\promocoes\feliz-combo.jpg|<br>|link2.html||
+temaki day|C:\Users\ADM\Documents\Site Shoyo Shoyo\Site Shoyo Shoyo\trunk\imagens\promocoes\temaki-day.jpg|<br>|link3.html||
+terça hot|C:\Users\ADM\Documents\Site Shoyo Shoyo\Site Shoyo Shoyo\trunk\imagens\promocoes\terca-hot.jpg|<br>|link4.html||
+quarta double|C:\Users\ADM\Documents\Site Shoyo Shoyo\Site Shoyo Shoyo\trunk\imagens\promocoes\quarta-double.jpg|<br>|link5.html||
+|||||
+</textarea></form>
+		
+ 
+<div id="painel">
+
+
+
+	                <script type="text/javascript">startPanel(0);</script>
+	   	        </div>
+
+                </align>
+
+
+
+
+            </article>
+        </content>
+        <footer>
+            <div id="rodape">
+                <div id="logoRodape">
+                    <img src="imagens/shoyo-shoyo-logo.png" />
+                </div>
+                <div id="informacoesContato">
+                    <p><b>Shoyo Shoyo LTDA. ME</p>
+                    <p>Endereço: Avenida Riachuelo nº325<b/></p>
+		    <p>Jardim São João - Guarulhos - SP</P>
+                       <a href="C:\Users\ADM\Documents\Site Shoyo Shoyo\Site Shoyo Shoyo\trunk\trabalheconosco">trabalheconosco </a>  
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
